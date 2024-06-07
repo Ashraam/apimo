@@ -38,5 +38,9 @@ class ApimoServiceProvider extends ServiceProvider
         $this->app->singleton(Property::class, function() {
             return new Property(app(Apimo::class), config('apimo.agency'));
         });
+
+        $this->app->singleton(Lead::class, function() {
+            return new Lead(app(Apimo::class), config('apimo.agency'));
+        });
     }
 }
